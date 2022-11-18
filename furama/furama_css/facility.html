@@ -10,6 +10,13 @@
           crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <style>
+
+    body{
+
+      background-image: url("images/a13.jpg");
+
+    }
+
     #wrapper {
       right: 0;
       margin: 0 auto;
@@ -56,7 +63,7 @@
 <body>
 <div class="container-fluid">
   <div class="p-3">
-    <h2 class="text-center fw-bold text-success">FACILITY LIST</h2>
+    <h2 class="text-center fw-bold text-info" style="font-size: xxx-large">FACILITY LIST</h2>
 
     <div class="notify" style="text-align: center; color: red">
       <div th:if="${message}">
@@ -67,8 +74,8 @@
     <nav class="navbar navbar-expand-lg pb-0 mb-0">
       <div class="container-fluid">
         <a th:href="@{/facility/create}">
-          <button class="btn btn-success btn-outline-secondary btn-sm">
-            <span class="fa-solid fa-person-circle-plus text-light h5 my-auto me-1"></span>
+          <button class="btn btn-primary btn-outline-secondary btn-sm">
+            <span class=" far fa-building text-light h5 my-auto me-1"></span>
             <span class="text-light"> Add new Facility</span>
           </button>
         </a>
@@ -121,7 +128,7 @@
         <td th:text="${facility.facilityType.name}"></td>
         <td class="text-center">
           <a th:href="@{/facility/edit/__${facility.id}__}">
-            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+            <span class="text-warning"><i class=" far fa-edit"></i></span>
           </a>
         </td>
         <td class="text-center">
@@ -232,26 +239,26 @@
       </div>
     </div>
 
-    <div class="row" style="width: 100%; padding: 0; margin: 0;">
-      <div id="wrapper" class="col-6">
-        <ul id="border-pagination">
-          <li>
-            <a th:href="@{'/facility'(page=0, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"
-               title="first page">First</a></li>
-          <li>
-            <a th:href="@{'/facility'(page=${facilityPage.number - 1}, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"
-               th:if="${facilityPage.hasPrevious()}" title="previous page">Previous</a></li>
-          <li><a href="#" class="active"><span
-                  th:text="${facilityPage.number+1}+'/'+${facilityPage.totalPages}"></span></a></li>
-          <li>
-            <a th:href="@{'/facility'(page=${facilityPage.number + 1}, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"
-               th:if="${facilityPage.hasNext()}" title="next page">Next</a></li>
-          <li>
-            <a th:href="@{'/facility'(page=${facilityPage.totalPages}-1, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"
-               title="last page">Last</a></li>
-        </ul>
-      </div>
-    </div>
+<!--    <div class="row" style="width: 100%; padding: 0; margin: 0;">-->
+<!--      <div id="wrapper" class="col-6">-->
+<!--        <ul id="border-pagination">-->
+<!--          <li>-->
+<!--            <a th:href="@{'/facility'(page=0, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"-->
+<!--               title="first page">First</a></li>-->
+<!--          <li>-->
+<!--            <a th:href="@{'/facility'(page=${facilityPage.number - 1}, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"-->
+<!--               th:if="${facilityPage.hasPrevious()}" title="previous page">Previous</a></li>-->
+<!--          <li><a href="#" class="active"><span-->
+<!--                  th:text="${facilityPage.number+1}+'/'+${facilityPage.totalPages}"></span></a></li>-->
+<!--          <li>-->
+<!--            <a th:href="@{'/facility'(page=${facilityPage.number + 1}, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"-->
+<!--               th:if="${facilityPage.hasNext()}" title="next page">Next</a></li>-->
+<!--          <li>-->
+<!--            <a th:href="@{'/facility'(page=${facilityPage.totalPages}-1, searchName=${searchName}, searchFacilityType=${searchFacilityType})}"-->
+<!--               title="last page">Last</a></li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 
   <script>
